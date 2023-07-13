@@ -16,4 +16,19 @@ def to_pinv(peak_list, prod_list):
     
     return to_pinv
 
-    
+def is_ratio_vld(all_ratio):
+
+    all_ratio_vld = True
+
+    for a, ratio in enumerate(all_ratio):
+
+        if ratio > 1 or ratio < 0:
+            all_ratio_vld = False        
+
+    return all_ratio_vld
+
+
+                
+
+
+
