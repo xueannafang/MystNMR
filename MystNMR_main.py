@@ -1,4 +1,5 @@
 import MystNMR_io
+import MystNMR_vld
 
 input_nmr_data = 'MystNMR_input_data.csv'
 
@@ -15,6 +16,11 @@ all_coeff_mat = {
     'EF' : [54, 36, 36],
     'G' : [9, 6, 6]
 }
+
+to_corr = MystNMR_vld.to_corr(peak_list)
+to_pinv = MystNMR_vld.to_pinv(peak_list, prod_list)
+print(to_corr, to_pinv)
+
 
 
 NMR_data_df, NMR_data_dict = MystNMR_io.load_input_data(input_nmr_data)
