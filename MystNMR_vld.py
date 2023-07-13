@@ -1,6 +1,6 @@
 def to_corr(peak_list):
 
-    to_corr  = any(item in ['D', 'EF', 'G'] for item in peak_list)
+    to_corr  = any(item in ['D', 'EF', 'G'] for item in peak_list) # Note that if BrAk signal is found in the product spectrum, peak D, EF, G needs to be corrected.
 
     return to_corr
 
