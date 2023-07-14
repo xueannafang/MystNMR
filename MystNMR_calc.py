@@ -9,10 +9,15 @@ def corr_brak(brak_alpha):
 
     return D_rm, EF_rm, G_rm
 
+def pinv_coeff(coeff_mat):
+
+    coeff_pinv = np.linalg.pinv(coeff_mat)
+
+    return coeff_pinv
 
 def inv_coeff(coeff_mat):
 
-    coeff_inv = coeff_inv = np.linalg.inv(coeff_mat)
+    coeff_inv = np.linalg.inv(coeff_mat)
 
     return coeff_inv
 
