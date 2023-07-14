@@ -2,7 +2,7 @@ import MystNMR_io
 import MystNMR_vld
 import MystNMR_calc
 
-test_name = 'NMR_20230713.csv'
+test_name = 'NMR_20230714.csv'
 
 input_nmr_data = 'MystNMR_input_data.csv'
 

@@ -10,9 +10,14 @@ def corr_brak(brak_alpha):
     return D_rm, EF_rm, G_rm
 
 
-def ptb_coeff_inv(coeff_mat):
+def inv_coeff(coeff_mat):
 
-    coeff_inv = np.linalg.inv(coeff_mat)
+    coeff_inv = coeff_inv = np.linalg.inv(coeff_mat)
+
+    return coeff_inv
+
+def ptb_coeff_inv(coeff_inv):
+
     ptb_on_inv = np.random.normal(0, 0.1, coeff_inv.T.shape)
     err_on_inv = np.dot(coeff_inv, ptb_on_inv)
     ptbted_inv = coeff_inv + err_on_inv
@@ -39,9 +44,9 @@ def dot_result(ptbted_inv, mat_B):
 
     return after_norm
 
-def dot_calc(coeff_mat, mat_B):
+def dot_calc(coeff_inv, mat_B):
 
-    ptbted_inv_mat = ptb_coeff_inv(coeff_mat)
+    ptbted_inv_mat = ptb_coeff_inv(coeff_inv)
     prod_ratio_mat = dot_result(ptbted_inv_mat, mat_B)
 
     return prod_ratio_mat
@@ -51,9 +56,11 @@ def stat_ptb_dot_calc(coeff_mat, mat_B, rpt_time = 10):
 
     vld_rslt = []
 
+    coeff_inv = inv_coeff(coeff_mat)
+
     for i in range(rpt_time):
 
-        prod_ratio_mat = dot_calc(coeff_mat, mat_B)
+        prod_ratio_mat = dot_calc(coeff_inv, mat_B)
         all_ratio_vld = MystNMR_vld.is_ratio_vld(prod_ratio_mat)
         
         if all_ratio_vld is True:
