@@ -97,3 +97,9 @@ The output will be saved after the calcultion is done.
 
 - [Example.csv](https://github.com/xueannafang/MystNMR/blob/main/NMR_20230713.csv)
 
+
+## Related project
+
+- [MystMS](https://github.com/xueannafang/MystMS_SP2_20230506)
+A side product prediction tool for MS analysis.
+
